@@ -73,7 +73,7 @@ export default function About() {
   const { ref: stat2Ref, inView: stat2InView } = useInView({ threshold: 0.2 });
 
   return (
-    <section id="about-us" className="bg-brand-background-secondary py-20 lg:py-[100px]">
+    <section id="about" className="bg-brand-background-secondary py-20 lg:py-[100px]">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
