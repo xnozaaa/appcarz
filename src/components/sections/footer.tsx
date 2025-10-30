@@ -96,6 +96,18 @@ const Footer = () => {
         {/* Bottom Section: Copyright */}
         <div className="mt-16 pt-8 border-t border-white/20 text-center text-sm text-white/70">
           <p>© 2024 App Carz. All Rights Reserved. | Professional Private Hire Service in West Midlands</p>
+          
+          {/* Footer Credit */}
+          <p className="mt-3 text-[0.875rem] text-white/60">
+            <a 
+              href="https://instagram.com/DesignsByNLY" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-white/90 hover:underline transition-all duration-300"
+            >
+              Website by DesignsByNLY
+            </a>
+          </p>
         </div>
       </div>
     </footer>
