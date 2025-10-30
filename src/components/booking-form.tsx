@@ -37,8 +37,8 @@ export const BookingForm = () => {
       {/* Personal Information */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="name" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <User className="mr-2 h-4 w-4" />
+          <label htmlFor="name" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <User className="mr-2 h-4 w-4 text-[#0B2838]" />
             Full Name *
           </label>
           <input
@@ -48,14 +48,14 @@ export const BookingForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
             placeholder="John Smith"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <Phone className="mr-2 h-4 w-4" />
+          <label htmlFor="phone" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <Phone className="mr-2 h-4 w-4 text-[#0B2838]" />
             Phone Number *
           </label>
           <input
@@ -65,15 +65,15 @@ export const BookingForm = () => {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
             placeholder="01922 500 500"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-          <Mail className="mr-2 h-4 w-4" />
+        <label htmlFor="email" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+          <Mail className="mr-2 h-4 w-4 text-[#0B2838]" />
           Email Address *
         </label>
         <input
@@ -83,7 +83,7 @@ export const BookingForm = () => {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
           placeholder="john.smith@example.com"
         />
       </div>
@@ -91,8 +91,8 @@ export const BookingForm = () => {
       {/* Journey Details */}
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="pickupLocation" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <MapPin className="mr-2 h-4 w-4" />
+          <label htmlFor="pickupLocation" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <MapPin className="mr-2 h-4 w-4 text-[#0B2838]" />
             Pick-up Location *
           </label>
           <input
@@ -102,14 +102,14 @@ export const BookingForm = () => {
             required
             value={formData.pickupLocation}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
             placeholder="165 Stafford Street, Walsall"
           />
         </div>
 
         <div>
-          <label htmlFor="dropoffLocation" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <MapPin className="mr-2 h-4 w-4" />
+          <label htmlFor="dropoffLocation" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <MapPin className="mr-2 h-4 w-4 text-[#0B2838]" />
             Drop-off Location *
           </label>
           <input
@@ -119,7 +119,7 @@ export const BookingForm = () => {
             required
             value={formData.dropoffLocation}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
             placeholder="Birmingham Airport"
           />
         </div>
@@ -127,8 +127,8 @@ export const BookingForm = () => {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         <div>
-          <label htmlFor="date" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <Calendar className="mr-2 h-4 w-4" />
+          <label htmlFor="date" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <Calendar className="mr-2 h-4 w-4 text-[#0B2838]" />
             Date *
           </label>
           <input
@@ -139,13 +139,13 @@ export const BookingForm = () => {
             value={formData.date}
             onChange={handleChange}
             min={new Date().toISOString().split('T')[0]}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
           />
         </div>
 
         <div>
-          <label htmlFor="time" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
-            <Clock className="mr-2 h-4 w-4" />
+          <label htmlFor="time" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <Clock className="mr-2 h-4 w-4 text-[#0B2838]" />
             Time *
           </label>
           <input
@@ -155,12 +155,13 @@ export const BookingForm = () => {
             required
             value={formData.time}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
           />
         </div>
 
         <div>
-          <label htmlFor="passengers" className="mb-2 flex items-center text-sm font-medium text-app-carz-text-secondary">
+          <label htmlFor="passengers" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
+            <User className="mr-2 h-4 w-4 text-[#0B2838]" />
             Passengers *
           </label>
           <select
@@ -169,7 +170,7 @@ export const BookingForm = () => {
             required
             value={formData.passengers}
             onChange={handleChange}
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+            className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
           >
             {[1, 2, 3, 4, 5, 6, 7, 8].map(num => (
               <option key={num} value={num}>{num} {num === 1 ? 'Passenger' : 'Passengers'}</option>
@@ -179,7 +180,7 @@ export const BookingForm = () => {
       </div>
 
       <div>
-        <label htmlFor="service" className="mb-2 block text-sm font-medium text-app-carz-text-secondary">
+        <label htmlFor="service" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
           Service Type *
         </label>
         <select
@@ -188,7 +189,7 @@ export const BookingForm = () => {
           required
           value={formData.service}
           onChange={handleChange}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
         >
           <option value="private-hire">Private Hire Taxi</option>
           <option value="airport-transfer">Airport Transfer</option>
@@ -198,7 +199,7 @@ export const BookingForm = () => {
       </div>
 
       <div>
-        <label htmlFor="specialRequests" className="mb-2 block text-sm font-medium text-app-carz-text-secondary">
+        <label htmlFor="specialRequests" className="mb-2 flex items-center text-sm font-semibold text-[#0B2838]">
           Special Requests (Optional)
         </label>
         <textarea
@@ -207,19 +208,19 @@ export const BookingForm = () => {
           value={formData.specialRequests}
           onChange={handleChange}
           rows={4}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-app-carz-text-secondary focus:border-app-carz-primary focus:outline-none focus:ring-2 focus:ring-app-carz-primary/20"
+          className="w-full rounded-lg border-2 border-gray-300 px-4 py-3 text-[#0B2838] focus:border-[#FF6B6B] focus:outline-none focus:ring-2 focus:ring-[#FF6B6B]/20"
           placeholder="Child seat needed, wheelchair accessible vehicle, luggage information, etc."
         />
       </div>
 
       <button
         type="submit"
-        className="btn-text w-full rounded-lg bg-app-carz-button-primary px-8 py-4 text-app-carz-button-text transition-all duration-300 hover:bg-app-carz-button-primary/90 hover:shadow-lg"
+        className="w-full rounded-lg bg-[#FF6B6B] px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#ff5252] hover:shadow-lg shadow-md"
       >
-        Request Booking
+        Submit Booking Request
       </button>
 
-      <p className="text-center text-sm text-app-carz-text-tertiary">
+      <p className="text-center text-sm text-[#686868]">
         By submitting this form, you agree to our terms of service. We'll contact you within 24 hours to confirm your booking.
       </p>
     </form>
