@@ -97,23 +97,23 @@ export default function LocationsPage() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="bg-app-carz-background-primary py-20 lg:py-28">
+        <section className="bg-[#0B2838] py-20 lg:py-28">
           <div className="container">
             <div className="mx-auto max-w-4xl text-center">
-              <h1 className="text-5xl lg:text-6xl font-semibold text-app-carz-text-primary mb-6">
+              <h1 className="text-5xl lg:text-6xl font-semibold text-white mb-6">
                 Areas We Serve
               </h1>
-              <p className="text-xl text-app-carz-text-primary/80 mb-8">
+              <p className="text-xl text-white/80 mb-8">
                 Professional private hire taxi service across the West Midlands region
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-app-carz-text-primary">
+              <div className="flex flex-wrap justify-center gap-4 text-white">
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5" />
                   <span>24/7 Service</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
-                  <a href="tel:01922500500" className="hover:text-app-carz-primary transition-colors">
+                  <a href="tel:01922500500" className="hover:text-[#FF6B6B] transition-colors">
                     01922 500 500
                   </a>
                 </div>
@@ -123,7 +123,7 @@ export default function LocationsPage() {
         </section>
 
         {/* Locations Grid */}
-        <section className="bg-app-carz-background-secondary py-20 lg:py-24">
+        <section className="bg-gray-50 py-20 lg:py-24">
           <div className="container">
             <div className="grid grid-cols-1 gap-8 lg:gap-10">
               {locations.map((location, index) => (
@@ -132,12 +132,12 @@ export default function LocationsPage() {
                   className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] p-8 lg:p-10 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-shadow duration-300"
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <MapPin className="h-8 w-8 text-app-carz-primary flex-shrink-0 mt-1" />
+                    <MapPin className="h-8 w-8 text-[#FF6B6B] flex-shrink-0 mt-1" />
                     <div>
-                      <h2 className="text-3xl font-semibold text-app-carz-text-secondary mb-3">
+                      <h2 className="text-3xl font-semibold text-[#0B2838] mb-3">
                         {location.name}
                       </h2>
-                      <p className="text-lg text-app-carz-text-tertiary mb-6">
+                      <p className="text-lg text-[#686868] mb-6">
                         {location.description}
                       </p>
                     </div>
@@ -145,28 +145,28 @@ export default function LocationsPage() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-xl font-semibold text-app-carz-text-secondary mb-4">
+                      <h3 className="text-xl font-semibold text-[#0B2838] mb-4">
                         Service Highlights
                       </h3>
                       <ul className="space-y-3">
                         {location.highlights.map((highlight, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <CheckCircle2 className="h-5 w-5 text-app-carz-primary flex-shrink-0 mt-0.5" />
-                            <span className="text-app-carz-text-tertiary">{highlight}</span>
+                            <CheckCircle2 className="h-5 w-5 text-[#FF6B6B] flex-shrink-0 mt-0.5" />
+                            <span className="text-[#686868]">{highlight}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-app-carz-text-secondary mb-4">
+                      <h3 className="text-xl font-semibold text-[#0B2838] mb-4">
                         Postcodes Covered
                       </h3>
                       <div className="flex flex-wrap gap-2">
                         {location.postcodes.map((postcode, idx) => (
                           <span 
                             key={idx}
-                            className="bg-app-carz-background-primary text-app-carz-text-primary px-4 py-2 rounded-lg text-sm font-medium"
+                            className="bg-[#0B2838] text-white px-4 py-2 rounded-lg text-sm font-medium"
                           >
                             {postcode}
                           </span>
@@ -181,25 +181,25 @@ export default function LocationsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-app-carz-background-primary py-20 lg:py-24">
+        <section className="bg-[#0B2838] py-20 lg:py-24">
           <div className="container">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-4xl font-semibold text-app-carz-text-primary mb-6">
+              <h2 className="text-4xl font-semibold text-white mb-6">
                 Don't See Your Location?
               </h2>
-              <p className="text-xl text-app-carz-text-primary/80 mb-8">
+              <p className="text-xl text-white/80 mb-8">
                 We may still be able to serve your area. Give us a call to discuss your transportation needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
                   href="tel:01922500500"
-                  className="btn-text inline-block bg-white text-app-carz-text-secondary px-8 py-4 rounded-lg hover:bg-white/90 transition-colors"
+                  className="btn-text inline-block bg-white text-[#0B2838] px-8 py-4 rounded-lg hover:bg-white/90 transition-colors"
                 >
                   Call 01922 500 500
                 </a>
                 <a 
                   href="/#contact"
-                  className="btn-text inline-block bg-transparent border-2 border-white text-app-carz-text-primary px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
+                  className="btn-text inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors"
                 >
                   Book Online
                 </a>
