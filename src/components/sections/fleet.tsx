@@ -11,7 +11,6 @@ const vehicles = [
     passengers: 4,
     luggage: 2,
     features: ["Air conditioning", "GPS navigation", "Phone charger", "Water bottles"],
-    priceFrom: "£15",
     description: "Perfect for everyday travel and short trips around the West Midlands."
   },
   {
@@ -21,7 +20,6 @@ const vehicles = [
     passengers: 4,
     luggage: 3,
     features: ["Leather seats", "Premium sound", "Climate control", "Complimentary Wi-Fi"],
-    priceFrom: "£25",
     description: "Luxury Mercedes E-Class for business travel and special occasions.",
     featured: true
   },
@@ -32,7 +30,6 @@ const vehicles = [
     passengers: 4,
     luggage: 4,
     features: ["Extra luggage space", "Family friendly", "Air conditioning", "GPS navigation"],
-    priceFrom: "£20",
     description: "Spacious estate car ideal for airport transfers with extra luggage."
   },
   {
@@ -42,7 +39,6 @@ const vehicles = [
     passengers: 8,
     luggage: 8,
     features: ["Mercedes V-Class", "Reclining seats", "Ambient lighting", "Premium comfort"],
-    priceFrom: "£45",
     description: "Mercedes V-Class for groups, families, and executive team transport.",
     featured: true
   }
@@ -120,7 +116,7 @@ const FleetSection = () => {
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-2 mb-6">
                   {vehicle.features.slice(0, 3).map((feature, idx) => (
                     <li key={idx} className="flex items-center text-xs text-brand-text-tertiary">
                       <Star className="w-3 h-3 text-[#FACC15] mr-2 flex-shrink-0" />
@@ -129,13 +125,8 @@ const FleetSection = () => {
                   ))}
                 </ul>
 
-                {/* Price */}
+                {/* Book Now Button */}
                 <div className="mt-auto">
-                  <div className="text-center mb-3">
-                    <span className="text-xs text-brand-text-tertiary">Starting from</span>
-                    <div className="text-2xl font-bold text-[#FF6B6B]">{vehicle.priceFrom}</div>
-                  </div>
-                  
                   <Button 
                     asChild
                     className="w-full bg-[#0B2838] text-white hover:bg-[#0B2838]/90 transition-colors"
