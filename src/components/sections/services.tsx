@@ -35,7 +35,6 @@ const services = [
     description: "Our private hire taxi service offers a comfortable and reliable way to travel around the West Midlands. Enjoy flexible scheduling and professional drivers ready to assist you.",
     imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b099e5ba-52d4-4f7d-b70d-16bd8649c97c-appcarz-co-uk/assets/images/tenweb_media_RUAC4ZVRM-3.webp",
     features: ["Door-to-door service", "Flexible scheduling", "All West Midlands areas", "Professional drivers"],
-    priceFrom: "£15",
     link: "#",
   },
   {
@@ -43,7 +42,6 @@ const services = [
     description: "Experience stress-free airport transfers with App Carz. Our punctual drivers ensure on-time pickups and a smooth journey to and from major airports.",
     imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b099e5ba-52d4-4f7d-b70d-16bd8649c97c-appcarz-co-uk/assets/images/tenweb_media_R4HD9C2Z3-4.webp",
     features: ["Flight monitoring", "Meet & greet service", "Fixed airport fares", "Luggage assistance"],
-    priceFrom: "£35",
     link: "#",
   },
   {
@@ -51,7 +49,6 @@ const services = [
     description: "Make your special events memorable with our dedicated transportation services. Arrive in style and comfort, whether it's a wedding or a corporate event.",
     imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b099e5ba-52d4-4f7d-b70d-16bd8649c97c-appcarz-co-uk/assets/images/electric-mercedes-benz-e-class-front-720x405px-5.jpg",
     features: ["Luxury vehicles", "Multiple passenger options", "Professional chauffeurs", "Special event packages"],
-    priceFrom: "£50",
     link: "#",
   }
 ];
@@ -119,10 +116,6 @@ const ServicesSection = () => {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                {/* Price badge */}
-                <div className="absolute top-4 right-4 bg-[#FF6B6B] text-white px-4 py-2 rounded-full font-semibold shadow-lg">
-                  From {service.priceFrom}
-                </div>
               </div>
               
               <div className="p-8 flex flex-col flex-grow">
