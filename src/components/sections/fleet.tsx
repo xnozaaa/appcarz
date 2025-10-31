@@ -35,7 +35,7 @@ const vehicles = [
   {
     name: "Minibus",
     category: "Group",
-    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/black-mercedes-v-class-luxury-minivan-ta-71aa1e8f-20251030133708.jpg",
+    image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/professional-black-standard-minibus-taxi-07d4a1e6-20251031164036.jpg",
     passengers: 8,
     luggage: 8,
     features: ["8 seater capacity", "Air conditioning", "Ample luggage space", "Group travel"],
