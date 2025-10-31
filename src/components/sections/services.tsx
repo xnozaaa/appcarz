@@ -40,7 +40,7 @@ const services = [
   {
     title: "Seamless Airport Transfers",
     description: "Experience stress-free airport transfers with App Carz. Our punctual drivers ensure on-time pickups and a smooth journey to and from major airports.",
-    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/b099e5ba-52d4-4f7d-b70d-16bd8649c97c-appcarz-co-uk/assets/images/tenweb_media_R4HD9C2Z3-4.webp",
+    imageUrl: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/professional-airport-terminal-scene-with-a34550bc-20251031164953.jpg",
     features: ["Flight monitoring", "Meet & greet service", "Fixed airport fares", "Luggage assistance"],
     link: "#",
   },
