@@ -90,7 +90,7 @@ const HeroSection = () => {
                 className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:16px_16px] pointer-events-none"
             />
             
-            <div className="relative z-10 flex flex-col items-center p-4 text-center max-w-5xl mx-auto">
+            <div className="relative z-10 flex flex-col items-center px-4 pt-32 pb-8 md:pt-24 lg:pt-4 text-center max-w-5xl mx-auto">
                 <h1 className="text-4xl font-semibold text-white tracking-[-0.025em] md:text-5xl lg:text-[60px] lg:leading-[1.2] drop-shadow-lg">
                     Experience{" "}
                     <span className="relative inline-block">
