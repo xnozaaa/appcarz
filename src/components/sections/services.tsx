@@ -180,7 +180,7 @@ const ServicesSection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0B2838] transition-all"
+              className="border-2 border-white bg-transparent text-white px-8 py-4 rounded-md hover:bg-white hover:text-[#0B2838] transition-all"
             >
               <a href="mailto:appcarz4@gmail.com">
                 Email Us
