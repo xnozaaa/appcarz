@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const vehicles = [
   {
-    name: "Standard Sedan",
+    name: "Standard Saloon",
     category: "Economy",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/professional-black-standard-sedan-taxi-t-e2476b70-20251030133708.jpg",
     passengers: 4,
@@ -14,7 +14,7 @@ const vehicles = [
     description: "Perfect for everyday travel and short trips around the West Midlands."
   },
   {
-    name: "Executive Sedan",
+    name: "Executive Saloon",
     category: "Premium",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/luxury-black-mercedes-e-class-executive--1a0d5cb7-20251030133708.jpg",
     passengers: 4,
@@ -24,7 +24,7 @@ const vehicles = [
     featured: true
   },
   {
-    name: "Estate / Wagon",
+    name: "Estate",
     category: "Standard",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/black-estate-car-taxi-spacious-wagon-veh-db7a6c5f-20251030133708.jpg",
     passengers: 4,
@@ -54,7 +54,7 @@ const FleetSection = () => {
             Our Fleet
           </h2>
           <p className="mt-4 text-lg text-brand-text-tertiary">
-            Explore our diverse range of vehicles, designed for safety and comfort. From standard sedans to luxury minivans, we have the perfect vehicle for every journey.
+            Explore our diverse range of vehicles, designed for safety and comfort. From standard saloons to luxury minibuses, we have the perfect vehicle for every journey.
           </p>
         </div>
 
