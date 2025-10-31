@@ -33,13 +33,13 @@ const vehicles = [
     description: "Spacious estate car ideal for airport transfers with extra luggage."
   },
   {
-    name: "Luxury Minivan",
+    name: "Minibus",
     category: "Group",
     image: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/black-mercedes-v-class-luxury-minivan-ta-71aa1e8f-20251030133708.jpg",
     passengers: 8,
     luggage: 8,
-    features: ["Mercedes V-Class", "Reclining seats", "Ambient lighting", "Premium comfort"],
-    description: "Mercedes V-Class for groups, families, and executive team transport.",
+    features: ["8 seater capacity", "Air conditioning", "Ample luggage space", "Group travel"],
+    description: "Spacious minibus perfect for groups, families, and airport transfers.",
     featured: true
   }
 ];
