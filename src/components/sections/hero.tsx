@@ -91,22 +91,14 @@ const HeroSection = () => {
             />
             
             <div className="relative z-10 flex flex-col items-center px-4 pt-32 pb-8 md:pt-24 lg:pt-4 text-center max-w-5xl mx-auto">
-                {/* Desktop heading - line under "Services" */}
+                {/* Desktop heading - line under just "Services" */}
                 <h1 className="hidden md:block text-4xl font-semibold text-white tracking-[-0.025em] md:text-5xl lg:text-[60px] lg:leading-[1.2] drop-shadow-lg">
-                    Experience Exceptional Transport{" "}
-                    <span className="relative inline-block">
-                        Services
-                        <ZigzagUnderline />
-                    </span>
+                    Experience Exceptional Transport <span className="relative inline-block">Services<ZigzagUnderline /></span>
                 </h1>
 
                 {/* Mobile heading - line under "Transport Services" */}
                 <h1 className="block md:hidden text-4xl font-semibold text-white tracking-[-0.025em] leading-[1.2] drop-shadow-lg">
-                    Experience Exceptional{" "}
-                    <span className="relative inline-block">
-                        Transport Services
-                        <ZigzagUnderline />
-                    </span>
+                    Experience Exceptional <span className="relative inline-block whitespace-nowrap">Transport Services<ZigzagUnderline /></span>
                 </h1>
 
                 <p className="mt-6 max-w-[680px] text-lg text-white/90 drop-shadow-md">
