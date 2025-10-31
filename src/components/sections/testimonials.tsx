@@ -160,12 +160,6 @@ const TestimonialsSection = () => {
               </div>
             ))}
           </div>
-
-          {/* License Number */}
-          <div className="mt-12 text-center">
-            <p className="text-white/60 text-sm mb-2">Licensed Private Hire Operator</p>
-            <p className="text-white font-mono text-lg">License No: WM-PHO-2024-12345</p>
-          </div>
         </div>
 
         {/* Partner Logos Section */}
