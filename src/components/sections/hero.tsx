@@ -26,15 +26,15 @@ const ZigzagUnderline = () => {
 
     return (
         <svg
-            className="absolute left-0 top-full w-full h-auto mt-1"
+            className="absolute left-1/2 -translate-x-1/2 top-full w-full h-auto mt-1"
             viewBox="0 0 190 12"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
+            preserveAspectRatio="xMidYMid meet"
         >
             <path
                 ref={pathRef}
-                d="M2 6C16.3333 1.33333 30.6667 1.33333 45 6C59.3333 10.6667 73.6667 10.6667 88 6C102.333 1.33333 116.667 1.33333 131 6C145.333 10.6667 159.667 10.6667 174 6"
+                d="M8 6C22.3333 1.33333 36.6667 1.33333 51 6C65.3333 10.6667 79.6667 10.6667 94 6C108.333 1.33333 122.667 1.33333 137 6C151.333 10.6667 165.667 10.6667 180 6"
                 stroke="#FACC15"
                 strokeWidth="4"
                 strokeLinecap="round"
