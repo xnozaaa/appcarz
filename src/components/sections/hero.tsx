@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Shield, Clock, Star } from "lucide-react";
+import { CheckCircle2, Shield, Clock, Star, Phone } from "lucide-react";
 
 const ZigzagUnderline = () => {
     const pathRef = useRef<SVGPathElement>(null);
@@ -135,7 +135,10 @@ const HeroSection = () => {
                         Book Now
                     </Button>
                     <Button asChild size="lg" className="h-auto rounded-md bg-[#FF6B6B] px-10 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#ff5252] transition-all duration-300 hover:scale-105">
-                        <Link href="tel:01922500500">Call Now: 01922 500 500</Link>
+                        <Link href="tel:01922500500" className="flex items-center gap-2">
+                            <Phone className="h-4 w-4" />
+                            01922 500 500
+                        </Link>
                     </Button>
                     <Button asChild size="lg" className="h-auto rounded-md bg-white px-10 py-4 text-base font-semibold text-[#0B2838] shadow-lg hover:bg-gray-100 transition-all duration-300 hover:scale-105">
                         <Link href="#services">View Our Services</Link>

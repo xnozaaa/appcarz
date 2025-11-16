@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Users, Briefcase, Luggage, Star } from 'lucide-react';
+import { Users, Briefcase, Luggage, Star, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const vehicles = [
@@ -176,7 +176,10 @@ const FleetSection = () => {
             size="lg"
             className="bg-[#FF6B6B] text-white px-8 py-4 hover:bg-[#ff5252] transition-all"
           >
-            <a href="tel:01922500500">Call Us: 01922 500 500</a>
+            <a href="tel:01922500500" className="flex items-center gap-2">
+              <Phone className="h-4 w-4" />
+              01922 500 500
+            </a>
           </Button>
         </div>
       </div>
