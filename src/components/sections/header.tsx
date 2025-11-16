@@ -40,6 +40,14 @@ const Header = () => {
     }
   };
 
+  const handleBookNow = () => {
+    window.open(
+      "https://nothingtoseehere.icabbi.com/secureshare/993a4bfd56a79dfbd014921791e60e6dc04033366b67e0671d678f6f6e26862e/59c38d8b4ab91f2799a746151b074ce6ceb521d9e92b3a33f162a42d4a40dac8",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   const navLinks = [
     { href: "/#about", label: "About" },
     { href: "/#services", label: "Services" },
@@ -81,6 +89,12 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
+            <button
+              onClick={handleBookNow}
+              className="flex items-center gap-2 bg-[#FACC15] text-[#0B2838] px-6 py-3 rounded-lg hover:bg-[#F5C211] transition-colors font-medium"
+            >
+              Book Now
+            </button>
             <a
               href="tel:01922500500"
               className="flex items-center gap-2 bg-[#FF6B6B] text-white px-6 py-3 rounded-lg hover:bg-[#FF6B6B]/90 transition-colors font-medium"
@@ -122,10 +136,19 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <button
+            onClick={() => {
+              handleBookNow();
+              setIsMobileMenuOpen(false);
+            }}
+            className="flex items-center gap-2 bg-[#FACC15] text-[#0B2838] px-8 py-4 rounded-lg hover:bg-[#F5C211] transition-colors font-medium text-xl mt-4"
+          >
+            Book Now
+          </button>
           <a
             href="tel:01922500500"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="flex items-center gap-2 bg-[#FF6B6B] text-white px-8 py-4 rounded-lg hover:bg-[#FF6B6B]/90 transition-colors font-medium text-xl mt-4"
+            className="flex items-center gap-2 bg-[#FF6B6B] text-white px-8 py-4 rounded-lg hover:bg-[#FF6B6B]/90 transition-colors font-medium text-xl"
           >
             <Phone className="h-5 w-5" />
             01922 500 500

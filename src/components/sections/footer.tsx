@@ -3,6 +3,14 @@ import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const handleBookNow = () => {
+    window.open(
+      "https://nothingtoseehere.icabbi.com/secureshare/993a4bfd56a79dfbd014921791e60e6dc04033366b67e0671d678f6f6e26862e/59c38d8b4ab91f2799a746151b074ce6ceb521d9e92b3a33f162a42d4a40dac8",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <footer className="bg-[#0B2838] text-white font-poppins">
       <div className="container py-16 sm:py-20">
@@ -81,14 +89,22 @@ const Footer = () => {
             </form>
 
             <div className="mt-6">
-              <p className="text-sm text-white/70 mb-2">24/7 Available</p>
-              <a 
-                href="tel:01922500500"
-                className="inline-flex items-center gap-2 bg-[#FF6B6B] text-white px-6 py-3 rounded-lg hover:bg-[#FF6B6B]/90 transition-colors font-medium"
-              >
-                <Phone className="h-4 w-4" />
-                Call Now
-              </a>
+              <p className="text-sm text-white/70 mb-3">24/7 Available</p>
+              <div className="flex flex-col gap-2">
+                <button
+                  onClick={handleBookNow}
+                  className="inline-flex items-center justify-center gap-2 bg-[#FACC15] text-[#0B2838] px-6 py-3 rounded-lg hover:bg-[#F5C211] transition-colors font-medium"
+                >
+                  Book Now
+                </button>
+                <a 
+                  href="tel:01922500500"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF6B6B] text-white px-6 py-3 rounded-lg hover:bg-[#FF6B6B]/90 transition-colors font-medium"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call Now
+                </a>
+              </div>
             </div>
           </div>
         </div>
