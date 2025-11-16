@@ -170,10 +170,20 @@ const ServicesSection = () => {
             <Button
               asChild
               size="lg"
-              className="bg-[#FF6B6B] text-white px-8 py-4 rounded-md hover:bg-[#ff5252] transition-all"
+              className="bg-[#FACC15] text-[#0B2838] px-8 py-4 rounded-md hover:bg-[#FACC15]/90 transition-all font-medium"
+            >
+              <a href="https://nothingtoseehere.icabbi.com/secureshare/993a4bfd56a79dfbd014921791e60e6dc04033366b67e0671d678f6f6e26862e/59c38d8b4ab91f2799a746151b074ce6ceb521d9e92b3a33f162a42d4a40dac8" target="_blank" rel="noopener noreferrer">
+                Book Now
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#FF6B6B] text-white px-8 py-4 rounded-md hover:bg-[#ff5252] transition-all flex items-center gap-2"
             >
               <a href="tel:01922500500">
-                Call 01922 500 500
+                <Phone className="w-5 h-5" />
+                01922 500 500
               </a>
             </Button>
             <Button
