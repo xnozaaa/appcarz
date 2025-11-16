@@ -65,6 +65,14 @@ const HeroSection = () => {
         { icon: Star, text: "15+ Years Experience" }
     ];
 
+    const handleBookNow = () => {
+        window.open(
+            "https://nothingtoseehere.icabbi.com/secureshare/993a4bfd56a79dfbd014921791e60e6dc04033366b67e0671d678f6f6e26862e/59c38d8b4ab91f2799a746151b074ce6ceb521d9e92b3a33f162a42d4a40dac8",
+            "_blank",
+            "noopener,noreferrer"
+        );
+    };
+
     return (
         <section
             id="hero"
@@ -118,7 +126,14 @@ const HeroSection = () => {
                     ))}
                 </div>
 
-                <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
+                <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
+                    <Button 
+                        onClick={handleBookNow}
+                        size="lg" 
+                        className="h-auto rounded-md bg-[#FACC15] px-10 py-4 text-base font-semibold text-[#0B2838] shadow-lg hover:bg-[#F5C211] transition-all duration-300 hover:scale-105"
+                    >
+                        Book Now
+                    </Button>
                     <Button asChild size="lg" className="h-auto rounded-md bg-[#FF6B6B] px-10 py-4 text-base font-semibold text-white shadow-lg hover:bg-[#ff5252] transition-all duration-300 hover:scale-105">
                         <Link href="tel:01922500500">Call Now: 01922 500 500</Link>
                     </Button>
