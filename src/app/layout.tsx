@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   title: "App Carz - Premier Private Hire Taxi Service | West Midlands & Birmingham Airport",
   description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events. Licensed drivers, modern fleet, competitive rates. Call 01922 500 500.",
   icons: {
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/app-carz-taxi-service-favicon-logo-desig-9936ba46-20251119235837.jpg",
-    apple: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/app-carz-taxi-service-favicon-logo-desig-9936ba46-20251119235837.jpg",
+    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/app-carz-taxi-service-favicon-logo-desig-9936ba46-20251119235837.jpg?v=" + Date.now(),
+    apple: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/b099e5ba-52d4-4f7d-b70d-16bd8649c97c/generated_images/app-carz-taxi-service-favicon-logo-desig-9936ba46-20251119235837.jpg?v=" + Date.now(),
   },
 };
 
