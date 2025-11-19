@@ -173,7 +173,9 @@ const blogContent: Record<string, {
             Let us handle your transportation logistics. Contact our corporate services team on 01922 500 500 to discuss your requirements.
           </p>
           <Link 
-            href="/#contact" 
+            href="https://appcarz.webbooker.icabbi.com/" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-app-carz-button-primary text-app-carz-button-text px-6 py-3 rounded-lg hover:bg-app-carz-button-primary/90 transition-colors"
           >
             Get a Quote
