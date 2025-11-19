@@ -131,7 +131,7 @@ const FleetSection = () => {
                     asChild
                     className="w-full bg-[#0B2838] text-white hover:bg-[#0B2838]/90 transition-colors"
                   >
-                    <a href="tel:01922500500">Book Now</a>
+                    <a href="https://appcarz.webbooker.icabbi.com/" target="_blank" rel="noopener noreferrer">Book Now</a>
                   </Button>
                 </div>
               </div>
