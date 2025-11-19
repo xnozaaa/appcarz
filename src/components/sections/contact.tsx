@@ -17,9 +17,9 @@ const ContactSection = () => {
       title: "Email Us",
       description: (
         <>
-          For any inquiries or to book a ride, feel free to reach out via email at{' '}
-          <a href="mailto:appcarz4@gmail.com" className="text-[#FF6B6B] hover:underline font-semibold">
-            appcarz4@gmail.com
+          For any inquiries or to book a ride, feel free to{' '}
+          <a href="#booking-form" className="text-[#FF6B6B] hover:underline font-semibold">
+            fill out our booking form
           </a>
           . Our team is ready to assist you with your transportation needs.
         </>
@@ -74,7 +74,7 @@ const ContactSection = () => {
     <section id="contact" className="bg-white py-20 lg:py-32 font-poppins">
       <div className="container">
         {/* Booking Form Section */}
-        <div className="mb-20">
+        <div id="booking-form" className="mb-20">
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2 className="text-4xl font-semibold text-[#0B2838] mb-4">
               Book Your Ride
