@@ -67,7 +67,7 @@ const HeroSection = () => {
 
     const handleBookNow = () => {
         window.open(
-            "https://nothingtoseehere.icabbi.com/secureshare/993a4bfd56a79dfbd014921791e60e6dc04033366b67e0671d678f6f6e26862e/59c38d8b4ab91f2799a746151b074ce6ceb521d9e92b3a33f162a42d4a40dac8",
+            "https://appcarz.webbooker.icabbi.com/",
             "_blank",
             "noopener,noreferrer"
         );
