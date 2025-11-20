@@ -114,7 +114,7 @@ const Footer = () => {
               <p className="text-sm text-white/70 mb-3">Download Our App</p>
               <div className="flex flex-col gap-2">
                 <a 
-                  href="https://apps.apple.com/app/appcarz"
+                  href="https://apps.apple.com/gb/app/app-carz/id1550577371"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2.5 rounded-lg hover:bg-white/20 transition-all duration-300"
@@ -128,7 +128,7 @@ const Footer = () => {
                   </div>
                 </a>
                 <a 
-                  href="https://play.google.com/store/apps/details?id=com.appcarz"
+                  href="https://play.google.com/store/apps/details?id=com.icabbi.walsallradiocars&pcampaignid=web_share"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-white/10 border border-white/20 text-white px-4 py-2.5 rounded-lg hover:bg-white/20 transition-all duration-300"
