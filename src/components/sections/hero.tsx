@@ -150,7 +150,7 @@ const HeroSection = () => {
                     <p className="text-white/80 text-sm font-medium">Download Our App</p>
                     <div className="flex flex-col sm:flex-row gap-3">
                         <a 
-                            href="https://apps.apple.com/app/appcarz"
+                            href="https://apps.apple.com/gb/app/app-carz/id1550577371"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
@@ -164,7 +164,7 @@ const HeroSection = () => {
                             </div>
                         </a>
                         <a 
-                            href="https://play.google.com/store/apps/details?id=com.appcarz"
+                            href="https://play.google.com/store/apps/details?id=com.icabbi.walsallradiocars&pcampaignid=web_share"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-3 bg-black text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105 shadow-lg"
