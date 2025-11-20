@@ -8,8 +8,48 @@ export const metadata: Metadata = {
   title: "App Carz - Premier Private Hire Taxi Service | West Midlands & Birmingham Airport",
   description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events. Licensed drivers, modern fleet, competitive rates. Call 01922 500 500.",
   icons: {
-    icon: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=512&height=512&resize=contain&v=3",
-    apple: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=512&height=512&resize=contain&v=3",
+    icon: [
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=32&height=32&resize=contain",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=16&height=16&resize=contain",
+        sizes: "16x16",
+        type: "image/png",
+      },
+    ],
+    shortcut: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=32&height=32&resize=contain",
+    apple: [
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=180&height=180&resize=contain",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  openGraph: {
+    title: "App Carz - Premier Private Hire Taxi Service | West Midlands",
+    description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events.",
+    url: "https://appcarz.co.uk",
+    siteName: "App Carz",
+    images: [
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=1200&height=630&resize=contain",
+        width: 1200,
+        height: 630,
+        alt: "App Carz Logo",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "App Carz - Premier Private Hire Taxi Service",
+    description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events.",
+    images: ["https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=1200&height=630&resize=contain"],
   },
 };
 
