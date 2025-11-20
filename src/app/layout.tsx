@@ -10,20 +10,20 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=32&height=32&resize=contain",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=16&height=16&resize=contain",
+        url: "/favicon-16x16.png",
         sizes: "16x16",
         type: "image/png",
       },
+      {
+        url: "/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
     ],
-    shortcut: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=32&height=32&resize=contain",
+    shortcut: "/favicon.ico",
     apple: [
       {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/Artboard-1-1763596857063.png?width=180&height=180&resize=contain",
+        url: "/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
       },
