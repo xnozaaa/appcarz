@@ -10,20 +10,30 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon-16x16.png",
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-16x16-1764200609800.png",
         sizes: "16x16",
         type: "image/png",
       },
       {
-        url: "/favicon-32x32.png",
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-32x32-1764200609796.png",
         sizes: "32x32",
         type: "image/png",
       },
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/android-chrome-192x192-1764200610016.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/android-chrome-512x512-1764200610122.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
-    shortcut: "/favicon.ico",
+    shortcut: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-1764200610116.ico",
     apple: [
       {
-        url: "/apple-touch-icon.png",
+        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/apple-touch-icon-1764200609864.png",
         sizes: "180x180",
         type: "image/png",
       },
