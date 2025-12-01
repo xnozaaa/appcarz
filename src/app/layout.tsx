@@ -7,38 +7,6 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "App Carz - Premier Private Hire Taxi Service | West Midlands & Birmingham Airport",
   description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events. Licensed drivers, modern fleet, competitive rates. Call 01922 500 500.",
-  icons: {
-    icon: [
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-16x16-1764200609800.png",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-32x32-1764200609796.png",
-        sizes: "32x32",
-        type: "image/png",
-      },
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/android-chrome-192x192-1764200610016.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/android-chrome-512x512-1764200610122.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
-    ],
-    shortcut: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/favicon-1764200610116.ico",
-    apple: [
-      {
-        url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/apple-touch-icon-1764200609864.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
-  },
   openGraph: {
     title: "App Carz - Premier Private Hire Taxi Service | West Midlands",
     description: "Professional private hire taxi service in West Midlands. 24/7 airport transfers, corporate travel, and special events.",
@@ -70,6 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#0A2035" />
+      </head>
       <body className="antialiased">
         <ErrorReporter />
         <Script
