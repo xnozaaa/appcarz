@@ -33,9 +33,9 @@ const Footer = () => {
                 <Phone className="h-4 w-4" />
                 <span>01922 500 500</span>
               </a>
-              <a href="mailto:appcarz4@gmail.com" className="flex items-center gap-2 text-sm text-white/90 hover:text-[#FF6B6B] transition-colors">
+              <a href="mailto:info@appcarz.co.uk" className="flex items-center gap-2 text-sm text-white/90 hover:text-[#FF6B6B] transition-colors">
                 <Mail className="h-4 w-4" />
-                <span>appcarz4@gmail.com</span>
+                <span>info@appcarz.co.uk</span>
               </a>
               <div className="flex items-start gap-2 text-sm text-white/70">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />

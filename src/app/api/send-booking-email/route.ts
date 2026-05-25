@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'appcarz4@gmail.com',
+      to: 'info@appcarz.co.uk',
       subject: `New Booking Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

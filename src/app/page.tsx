@@ -36,7 +36,7 @@ export default function Home() {
       "addressCountry": "GB"
     },
     "telephone": "+441922500500",
-    "email": "appcarz4@gmail.com",
+    "email": "info@appcarz.co.uk",
     "url": "https://appcarz.co.uk",
     "priceRange": "££",
     "openingHours": "Mo-Su 00:00-23:59",

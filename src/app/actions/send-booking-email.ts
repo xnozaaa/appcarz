@@ -206,7 +206,7 @@ Please contact the customer within 24 hours to confirm the booking.
     // Send email
     const info = await transporter.sendMail({
       from: `"App Carz Booking System" <${process.env.EMAIL_USER}>`,
-      to: 'appcarz4@gmail.com',
+      to: 'info@appcarz.co.uk',
       subject: `New Booking Request - ${data.name} - ${new Date(data.date).toLocaleDateString('en-GB')}`,
       text: emailText,
       html: emailHtml,

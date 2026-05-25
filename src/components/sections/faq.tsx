@@ -29,7 +29,7 @@ const faqData: {
     answer: (
       <>
         <p>
-          You can easily book a ride through our online booking form on this website, by calling our customer service team on <a href="tel:01922500500" className="text-app-carz-primary hover:underline font-semibold">01922 500 500</a>, or by emailing us at <a href="mailto:appcarz4@gmail.com" className="text-app-carz-primary hover:underline">appcarz4@gmail.com</a>.
+          You can easily book a ride through our online booking form on this website, by calling our customer service team on <a href="tel:01922500500" className="text-app-carz-primary hover:underline font-semibold">01922 500 500</a>, or by emailing us at <a href="mailto:info@appcarz.co.uk" className="text-app-carz-primary hover:underline">info@appcarz.co.uk</a>.
         </p>
         <p className="mt-4">
           We recommend booking in advance for the best availability, especially for airport transfers and special events.
@@ -181,7 +181,7 @@ const FaqSection = () => {
 
         <div className="text-center mt-8">
           <p className="text-brand-text-tertiary">
-            Still have questions? <a href="tel:01922500500" className="text-app-carz-primary hover:underline font-semibold">Call us at 01922 500 500</a> or <a href="mailto:appcarz4@gmail.com" className="text-app-carz-primary hover:underline font-semibold">email us</a>
+            Still have questions? <a href="tel:01922500500" className="text-app-carz-primary hover:underline font-semibold">Call us at 01922 500 500</a> or <a href="mailto:info@appcarz.co.uk" className="text-app-carz-primary hover:underline font-semibold">email us</a>
           </p>
         </div>
       </div>
