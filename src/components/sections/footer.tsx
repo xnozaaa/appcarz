@@ -1,10 +1,48 @@
 "use client";
 
+import { FormEvent, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState("");
+  const [newsletterError, setNewsletterError] = useState(false);
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setNewsletterSubmitting(true);
+    setNewsletterStatus("");
+    setNewsletterError(false);
+
+    try {
+      const response = await fetch("/api/newsletter-signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to sign up.");
+      }
+
+      setNewsletterEmail("");
+      setNewsletterStatus("Thank you. Your email has been registered.");
+    } catch (error) {
+      setNewsletterError(true);
+      setNewsletterStatus(
+        error instanceof Error
+          ? error.message
+          : "Unable to sign up. Please try again."
+      );
+    } finally {
+      setNewsletterSubmitting(false);
+    }
+  };
+
   const handleBookNow = () => {
     window.open(
       "https://appcarz.webbooker.icabbi.com/",
@@ -73,22 +111,41 @@ const Footer = () => {
             <p className="text-sm text-white/70 mb-4">
               Subscribe to our newsletter for updates and special offers.
             </p>
-            <form className="flex w-full max-w-xs mb-6">
+            <form
+              className="flex w-full max-w-xs"
+              onSubmit={handleNewsletterSubmit}
+            >
               <label htmlFor="footer-email" className="sr-only">Email</label>
               <input
                 id="footer-email"
+                name="email"
                 type="email"
                 placeholder="Your email"
+                required
+                autoComplete="email"
+                value={newsletterEmail}
+                onChange={(event) => setNewsletterEmail(event.target.value)}
                 className="w-full flex-grow px-4 py-2 bg-white/10 border border-r-0 border-white/20 rounded-l-md text-base text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-brand-primary"
               />
               <button
                 type="submit"
+                disabled={newsletterSubmitting}
                 className="bg-brand-primary text-white font-medium text-base px-5 py-2 rounded-r-md hover:bg-red-500 transition-colors duration-300"
                 aria-label="Subscribe to newsletter"
               >
-                Go
+                {newsletterSubmitting ? "..." : "Go"}
               </button>
             </form>
+            {newsletterStatus && (
+              <p
+                className={`mt-2 mb-6 text-sm ${
+                  newsletterError ? "text-red-300" : "text-green-300"
+                }`}
+                role={newsletterError ? "alert" : "status"}
+              >
+                {newsletterStatus}
+              </p>
+            )}
 
             <div className="mt-6">
               <p className="text-sm text-white/70 mb-3">24/7 Available</p>

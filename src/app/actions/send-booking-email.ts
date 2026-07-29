@@ -1,6 +1,6 @@
 'use server';
 
-import { transporter } from '@/lib/nodemailer';
+import { escapeHtml, sendResendEmail, text } from '@/lib/resend-email';
 
 interface BookingData {
   name: string;
@@ -17,6 +17,34 @@ interface BookingData {
 
 export async function sendBookingEmail(data: BookingData) {
   try {
+    const name = text(data.name);
+    const email = text(data.email);
+    const phone = text(data.phone);
+    const pickupLocation = text(data.pickupLocation);
+    const dropoffLocation = text(data.dropoffLocation);
+    const date = text(data.date);
+    const time = text(data.time);
+    const passengers = text(data.passengers);
+    const service = text(data.service);
+    const specialRequests = text(data.specialRequests);
+
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !pickupLocation ||
+      !dropoffLocation ||
+      !date ||
+      !time ||
+      !passengers ||
+      !service
+    ) {
+      return {
+        success: false,
+        error: 'Please complete all required booking fields.',
+      };
+    }
+
     const serviceTypes: Record<string, string> = {
       'private-hire': 'Private Hire Taxi',
       'airport-transfer': 'Airport Transfer',
@@ -24,7 +52,11 @@ export async function sendBookingEmail(data: BookingData) {
       'corporate': 'Corporate Transportation',
     };
 
-    const serviceName = serviceTypes[data.service] || data.service;
+    const serviceName = serviceTypes[service] || service;
+    const formattedDate = new Date(`${date}T00:00:00`).toLocaleDateString(
+      'en-GB',
+      { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    );
 
     // Email HTML template
     const emailHtml = `
@@ -117,15 +149,15 @@ export async function sendBookingEmail(data: BookingData) {
               <div class="section-title">Customer Information</div>
               <div class="info-row">
                 <span class="label">Name:</span>
-                <span class="value">${data.name}</span>
+                <span class="value">${escapeHtml(name)}</span>
               </div>
               <div class="info-row">
                 <span class="label">Email:</span>
-                <span class="value">${data.email}</span>
+                <span class="value">${escapeHtml(email)}</span>
               </div>
               <div class="info-row">
                 <span class="label">Phone:</span>
-                <span class="value">${data.phone}</span>
+                <span class="value">${escapeHtml(phone)}</span>
               </div>
             </div>
 
@@ -133,38 +165,38 @@ export async function sendBookingEmail(data: BookingData) {
               <div class="section-title">Journey Details</div>
               <div class="info-row">
                 <span class="label">Pick-up Location:</span>
-                <span class="value">${data.pickupLocation}</span>
+                <span class="value">${escapeHtml(pickupLocation)}</span>
               </div>
               <div class="info-row">
                 <span class="label">Drop-off Location:</span>
-                <span class="value">${data.dropoffLocation}</span>
+                <span class="value">${escapeHtml(dropoffLocation)}</span>
               </div>
               <div class="info-row">
                 <span class="label">Date:</span>
-                <span class="value">${new Date(data.date).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <span class="value">${formattedDate}</span>
               </div>
               <div class="info-row">
                 <span class="label">Time:</span>
-                <span class="value">${data.time}</span>
+                <span class="value">${escapeHtml(time)}</span>
               </div>
               <div class="info-row">
                 <span class="label">Passengers:</span>
-                <span class="value">${data.passengers}</span>
+                <span class="value">${escapeHtml(passengers)}</span>
               </div>
             </div>
 
             <div class="section">
               <div class="section-title">Service Type</div>
               <div class="info-row">
-                <span class="value">${serviceName}</span>
+                <span class="value">${escapeHtml(serviceName)}</span>
               </div>
             </div>
 
-            ${data.specialRequests ? `
+            ${specialRequests ? `
               <div class="section">
                 <div class="section-title">Special Requests</div>
                 <div class="highlight">
-                  ${data.specialRequests}
+                  ${escapeHtml(specialRequests)}
                 </div>
               </div>
             ` : ''}
@@ -183,47 +215,47 @@ export async function sendBookingEmail(data: BookingData) {
 NEW BOOKING REQUEST - APP CARZ
 
 CUSTOMER INFORMATION
-Name: ${data.name}
-Email: ${data.email}
-Phone: ${data.phone}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
 
 JOURNEY DETAILS
-Pick-up Location: ${data.pickupLocation}
-Drop-off Location: ${data.dropoffLocation}
-Date: ${new Date(data.date).toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-Time: ${data.time}
-Passengers: ${data.passengers}
+Pick-up Location: ${pickupLocation}
+Drop-off Location: ${dropoffLocation}
+Date: ${formattedDate}
+Time: ${time}
+Passengers: ${passengers}
 
 SERVICE TYPE
 ${serviceName}
 
-${data.specialRequests ? `SPECIAL REQUESTS\n${data.specialRequests}\n` : ''}
+${specialRequests ? `SPECIAL REQUESTS\n${specialRequests}\n` : ''}
 ---
 This booking request was submitted via the App Carz website.
 Please contact the customer within 24 hours to confirm the booking.
     `;
 
-    // Send email
-    const info = await transporter.sendMail({
-      from: `"App Carz Booking System" <${process.env.EMAIL_USER}>`,
-      to: 'info@appcarz.co.uk',
-      subject: `New Booking Request - ${data.name} - ${new Date(data.date).toLocaleDateString('en-GB')}`,
+    const messageId = await sendResendEmail({
+      to: process.env.BOOKING_TO_EMAIL?.trim() || 'info@appcarz.co.uk',
+      subject: `New Booking Request - ${name} - ${new Date(
+        `${date}T00:00:00`
+      ).toLocaleDateString('en-GB')}`,
       text: emailText,
       html: emailHtml,
-      replyTo: data.email,
+      replyTo: email,
     });
 
-    console.log('✓ Booking email sent successfully:', info.messageId);
+    console.log('✓ Booking email sent successfully:', messageId);
     return { 
       success: true, 
-      messageId: info.messageId,
+      messageId,
       message: 'Booking request sent successfully!' 
     };
   } catch (error) {
     console.error('❌ Failed to send booking email:', error);
     return { 
       success: false, 
-      error: error instanceof Error ? error.message : 'Failed to send booking request. Please try again or call us directly at 01922 500 500.' 
+      error: 'Failed to send booking request. Please try again or call us directly at 01922 500 500.'
     };
   }
 }

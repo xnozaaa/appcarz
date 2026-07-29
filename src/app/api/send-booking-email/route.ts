@@ -1,35 +1,40 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { escapeHtml, sendResendEmail, text } from '@/lib/resend-email';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const {
-      name,
-      email,
-      phone,
-      pickupLocation,
-      dropoffLocation,
-      passengers,
-      date,
-      time,
-      vehicleType,
-      additionalRequirements
-    } = body;
+    const name = text(body.name);
+    const email = text(body.email);
+    const phone = text(body.phone);
+    const pickupLocation = text(body.pickupLocation);
+    const dropoffLocation = text(body.dropoffLocation);
+    const passengers = text(body.passengers);
+    const date = text(body.date);
+    const time = text(body.time);
+    const vehicleType = text(body.vehicleType || body.service);
+    const additionalRequirements = text(
+      body.additionalRequirements || body.specialRequests
+    );
 
-    // Create transporter
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !pickupLocation ||
+      !dropoffLocation ||
+      !passengers ||
+      !date ||
+      !time
+    ) {
+      return NextResponse.json(
+        { error: 'Please complete all required booking fields.' },
+        { status: 400 }
+      );
+    }
 
     // Email content
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: 'info@appcarz.co.uk',
+    const emailContent = {
       subject: `New Booking Request from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -39,25 +44,25 @@ export async function POST(request: NextRequest) {
           
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #0B2838; margin-top: 0;">Customer Information</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
           </div>
 
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #0B2838; margin-top: 0;">Journey Details</h3>
-            <p><strong>Pickup Location:</strong> ${pickupLocation}</p>
-            <p><strong>Dropoff Location:</strong> ${dropoffLocation}</p>
-            <p><strong>Date:</strong> ${date}</p>
-            <p><strong>Time:</strong> ${time}</p>
-            <p><strong>Number of Passengers:</strong> ${passengers}</p>
-            <p><strong>Vehicle Type:</strong> ${vehicleType}</p>
+            <p><strong>Pickup Location:</strong> ${escapeHtml(pickupLocation)}</p>
+            <p><strong>Dropoff Location:</strong> ${escapeHtml(dropoffLocation)}</p>
+            <p><strong>Date:</strong> ${escapeHtml(date)}</p>
+            <p><strong>Time:</strong> ${escapeHtml(time)}</p>
+            <p><strong>Number of Passengers:</strong> ${escapeHtml(passengers)}</p>
+            <p><strong>Vehicle Type:</strong> ${escapeHtml(vehicleType || 'Not provided')}</p>
           </div>
 
           ${additionalRequirements ? `
           <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #0B2838; margin-top: 0;">Additional Requirements</h3>
-            <p>${additionalRequirements}</p>
+            <p>${escapeHtml(additionalRequirements)}</p>
           </div>
           ` : ''}
 
@@ -69,8 +74,12 @@ export async function POST(request: NextRequest) {
       `,
     };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    await sendResendEmail({
+      to: process.env.BOOKING_TO_EMAIL?.trim() || 'info@appcarz.co.uk',
+      subject: emailContent.subject,
+      html: emailContent.html,
+      replyTo: email,
+    });
 
     return NextResponse.json(
       { message: 'Booking request sent successfully' },
