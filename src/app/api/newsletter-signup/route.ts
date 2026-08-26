@@ -1,19 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { escapeHtml, sendResendEmail, text } from '@/lib/resend-email';
+import { escapeHtml, sendResendEmail } from '@/lib/resend-email';
+import {
+  cleanText,
+  guardPublicPost,
+  isValidEmail,
+} from '@/lib/request-security';
 
 export async function POST(request: NextRequest) {
+  const blocked = guardPublicPost(request, {
+    scope: 'newsletter',
+    limit: 6,
+    maxBodyBytes: 4_096,
+  });
+  if (blocked) {
+    return NextResponse.json({ error: blocked.error }, { status: blocked.status });
+  }
+
   try {
     const body = await request.json();
-    const email = text(body.email);
+    const email = cleanText(body.email, 254).toLowerCase();
 
-    if (!email) {
+    if (!isValidEmail(email)) {
       return NextResponse.json(
         { error: 'Please enter your email address.' },
         { status: 400 }
       );
     }
 
-    const messageId = await sendResendEmail({
+    await sendResendEmail({
       to:
         process.env.NEWSLETTER_TO_EMAIL?.trim() ||
         process.env.BOOKING_TO_EMAIL?.trim() ||
@@ -28,9 +42,8 @@ export async function POST(request: NextRequest) {
       fromName: 'App Carz Website',
     });
 
-    return NextResponse.json({ success: true, messageId });
-  } catch (error) {
-    console.error('Newsletter signup error:', error);
+    return NextResponse.json({ success: true });
+  } catch {
     return NextResponse.json(
       { error: 'Unable to register your email right now.' },
       { status: 500 }

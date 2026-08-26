@@ -1,35 +1,37 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 
-const LOADER = path.resolve(__dirname, 'src/visual-edits/component-tagger-loader.js');
+const securityHeaders = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "DENY" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  {
+    key: "Permissions-Policy",
+    value: "camera=(), microphone=(), geolocation=()",
+  },
+  {
+    key: "Content-Security-Policy",
+    value: "base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'",
+  },
+  {
+    key: "Strict-Transport-Security",
+    value: "max-age=31536000; includeSubDomains",
+  },
+];
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**',
-      },
-      {
-        protocol: 'http',
-        hostname: '**',
+        protocol: "https",
+        hostname: "slelguoygbfzlpylpxfs.supabase.co",
+        pathname: "/storage/v1/**",
       },
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true,
+  async headers() {
+    return [{ source: "/(.*)", headers: securityHeaders }];
   },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  turbopack: {
-    rules: {
-      "*.{jsx,tsx}": {
-        loaders: [LOADER]
-      }
-    }
-  }
 };
 
 export default nextConfig;
-// Orchids restart: 1761832626827

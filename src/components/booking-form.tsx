@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { Calendar, MapPin, User, Phone, Mail, Clock } from 'lucide-react';
-import { sendBookingEmail } from '@/app/actions/send-booking-email';
 import { toast } from 'sonner';
 
 export const BookingForm = () => {
@@ -25,9 +24,17 @@ export const BookingForm = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await sendBookingEmail(formData);
+      const response = await fetch('/api/send-booking-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = (await response.json()) as {
+        message?: string;
+        error?: string;
+      };
       
-      if (result.success) {
+      if (response.ok) {
         toast.success('Booking request sent successfully!', {
           description: 'We will contact you within 24 hours to confirm your reservation.'
         });
@@ -50,7 +57,7 @@ export const BookingForm = () => {
           description: result.error || 'Please try again or call us directly at 01922 500 500.'
         });
       }
-    } catch (error) {
+    } catch {
       toast.error('Something went wrong', {
         description: 'Please try again or call us directly at 01922 500 500.'
       });

@@ -52,11 +52,7 @@ export async function sendResendEmail({
 
   const result = (await response.json()) as ResendResponse;
   if (!response.ok) {
-    console.error('Resend delivery error:', {
-      status: response.status,
-      name: result.name,
-      message: result.message,
-    });
+    console.error(`Resend delivery failed with status ${response.status}`);
     throw new Error('Email delivery failed');
   }
 

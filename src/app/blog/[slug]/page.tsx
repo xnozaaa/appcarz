@@ -401,8 +401,13 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = blogContent[params.slug];
+export default async function BlogPost({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = blogContent[slug];
 
   if (!post) {
     notFound();
