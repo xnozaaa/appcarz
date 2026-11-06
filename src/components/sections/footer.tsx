@@ -208,14 +208,15 @@ const Footer = () => {
           <p>© 2024 App Carz. All Rights Reserved. | Professional Private Hire Service in West Midlands</p>
           
           {/* Designer Credit */}
-          <p className="mt-3 text-xs opacity-60 hover:opacity-100 transition-opacity duration-300">
+          <p className="mt-3 text-xs text-white/70">
+            Created by{" "}
             <a 
-              href="https://instagram.com/DesignsByNLY" 
+              href="https://yulaverse.co.uk/"
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:underline hover:text-[#FF6B6B] transition-all duration-300"
+              className="inline-flex min-h-8 items-center underline-offset-4 hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              Website by DesignsByNLY
+              Yulaverse Studio
             </a>
           </p>
         </div>
